@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Hello</title>
+</head>
+<body>
+    <h1> টেমপ্লেটস থেকে বলছি ভাই !! আমার আর নিস্তার নাই </h1>
+    <img src="{% static 'image/mahadi.jpg' %}" alt="">
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+        </tr>
+        {% for row in students %}
+        <tr>
+            <td>{{row.name}}</td>
+            <td>{{row.age}}</td>
+            <td>{{row.dept}}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+    <a href="{% url 'students:form' %}">Add New Student</a>
+</body>
+</html>
